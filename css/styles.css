@@ -1,0 +1,80 @@
+.container-card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.login-card {
+	width: 790px;
+	height: 460px;
+	/* border-radius: 10px; */
+	background: #fffdfd;
+	box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.154);
+}
+
+.img-login {
+	background-image: linear-gradient(0deg, rgba(100, 84, 38, 0.31), rgba(248, 221, 88, 0)), url("../img/task.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	background-color: rgb(30, 28, 56);
+	filter: unset;
+}
+
+.img-logo img {
+	height: 61px;
+	margin-left: 91px;
+	margin-top: -23px;
+	margin-bottom: 59px;
+}
+
+.form-login-body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.form-login {
+	width: 350px;
+}
+
+.form-login input {
+	background-color: #f2f2f2;
+	border: none;
+	padding: 14px;
+	width: 100%;
+	box-sizing: border-box;
+	font-size: 15px;
+	outline: 0;
+}
+
+.btn-login {
+	border-radius: 0;
+	background-color: rgb(29, 27, 54);
+	padding: 0.75rem 1rem;
+	border: none;
+}
+
+button.w-100.btn-login {
+	letter-spacing: 0.05rem;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #fff;
+	text-decoration: none;
+}
+
+.btn-login:hover {
+	background-color: #fab304;
+	font-weight: bold;
+	outline: none;
+}
+.error-mensaje-login{
+	color: red;
+	font-size: 13px;
+	text-decoration: overline;
+}
