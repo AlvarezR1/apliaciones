@@ -78,3 +78,28 @@ button.w-100.btn-login {
 	font-size: 13px;
 	text-decoration: overline;
 }
+
+.w3-sidebar {
+     width: 25%;
+    height: 100vh;
+     display: flex;
+     flex-direction: column;
+    justify-content: center;
+ }
+
+.nav-item {
+    text-align: center;
+     margin-bottom: 20px;
+}
+
+.nav-item a {
+     display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-item a i {
+    margin-right: 10px; /* Ajusta el espacio entre el ícono y el texto */
+}
