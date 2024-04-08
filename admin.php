@@ -17,7 +17,7 @@
   <a href="#" class="w3-bar-item w3-button">Pendientes</a>
   <a href="#" class="w3-bar-item w3-button">Atrasados</a>
   <a href="#" class="w3-bar-item w3-button">Completados</a>
-  <a href="#" class="w3-bar-item w3-button">Salir</a>
+  <a href="config/logout.php" class="w3-bar-item w3-button">Salir</a>
 </div>
 
 <!-- Page Content -->
