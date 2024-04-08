@@ -3,49 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>user page</title>
-</head>
-<body>
-    <h1>useer</h1>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Vista_Admin</title>
 </head>
 <body>
     <!-- Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+  <h3 class="w3-bar-item">Randy</h3>
+  <a href="#" class="w3-bar-item w3-button">Inicio</a>
+  <a href="#" class="w3-bar-item w3-button">Usuarios</a>
+  <a href="#" class="w3-bar-item w3-button">Tareas</a>
+  <a href="#" class="w3-bar-item w3-button">Pendientes</a>
+  <a href="#" class="w3-bar-item w3-button">Atrasados</a>
+  <a href="#" class="w3-bar-item w3-button">Completados</a>
+  <a href="#" class="w3-bar-item w3-button">Salir</a>
+</div>
 
-    <body>
-    <h1>useer</h1>
-    <div class="container-fluid">
-        <div class="row flex-nowrap">
-
-            <div class="bg-dark col-auto col-md-2 min-vh-100">
-                <div class="bg-dark">
-                    <a class="d-flex text-decoration-none align items - center "">
-                      <span class="fs-4 d-none d-sm-inline ">sidemenu</span>
-
-
-
-                    </a>
-                    <ul class="nav nav-pills flex column">
-                        <li class="nav-item">
-                            <a href="#" class="nav link active" aria-current="page">active  </a>
-                        </li>
-
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-
-</html>
 <!-- Page Content -->
 <div style="margin-left:25%">
 
@@ -54,7 +28,7 @@
 </div>
 
 <div class="w3-container">
-  <h2>Usuario</h2>
+  <h2>Admin</h2>
   <p>*inserta texto*</p>
 
   <table class="w3-table-all w3-card-4">
@@ -81,7 +55,5 @@
   </table>
 </div>
 
-</body>
-</html>
 </body>
 </html>
