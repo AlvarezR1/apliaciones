@@ -7,34 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
     <title>Vista_Admin</title>
-    <style>
-        .w3-sidebar {
-            width: 25%;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .nav-item {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .nav-item a {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            text-decoration: none;
-            color: white;
-        }
-
-        .nav-item a i {
-            margin-right: 10px; /* Ajusta el espacio entre el ícono y el texto */
-        }
-    </style>
 </head>
 <body>
     <!-- Page Content -->
@@ -87,34 +61,8 @@
     <!-- Page Content -->
     <div style="margin-left:25%">
         <div class="w3-container w3-teal">
-            <h1>USUARIOS</h1>
+            <h1>INICIO</h1>
         </div>
-        <div class="w3-container">
-            <div style="margin-top:20px">
-            <table class="w3-table-all w3-card-4">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Tipo</th>
-                </tr>
-                <tr>
-                    <td>Juan</td>
-                    <td>toto@gmail.com</td>
-                    <td>Usuario</td>
-                </tr>
-                <tr>
-                    <td>Raul</td>
-                    <td>Homo@sexual.com</td>
-                    <td>Admin</td>
-                </tr>
-                <tr>
-                    <td>Liz</td>
-                    <td>papito@hotmail.com</td>
-                    <td>Usuario</td>
-                </tr>
-            </table>
-            </div>
-        </div>
-    </div>
+
 </body>
 </html>

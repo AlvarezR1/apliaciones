@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="-MX">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
     <title>Vista_Admin</title>
-    <style>
-        .w3-sidebar {
-            width: 25%;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .nav-item {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .nav-item a {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            text-decoration: none;
-            color: white;
-        }
-
-        .nav-item a i {
-            margin-right: 10px; /* Ajusta el espacio entre el ícono y el texto */
-        }
-    </style>
 </head>
-
 <body>
     <!-- Page Content -->
     <div class="w3-sidebar w3-light-grey">
@@ -90,8 +63,6 @@
         <div class="w3-container w3-teal">
             <h1>COMPLETADOS</h1>
         </div>
-        <div class="w3-container">
-        </div>
-    </div>
+ 
 </body>
 </html>
