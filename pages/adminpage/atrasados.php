@@ -46,7 +46,7 @@
             </a>
             <ul class="nav nav-pills flex-column mt-4 mb-auto">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="adminpage.php" class="nav-link">
                         <i class="fs-5 fas fa-home"></i><span class="fs-4 ms-3 d-none d-sm-inline">INICIO</span>
                     </a>
                 </li>
@@ -78,7 +78,7 @@
             </ul>
             <hr class="d-sm-none">
             <div class="mt-auto">
-                <a href="config/logout.php" class="nav-link">
+                <a href="../../config/logout.php" class="nav-link">
                     <i class="fs-5 fas fa-sign-out-alt"></i><span class="fs-4 d-none ms-3 d-sm-inline">Salir</span>  
                 </a>
             </div>

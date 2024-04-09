@@ -46,7 +46,7 @@
             </a>
             <ul class="nav nav-pills flex-column mt-4 mb-auto">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="adminpage.php" class="nav-link">
                         <i class="fs-5 fas fa-home"></i><span class="fs-4 ms-3 d-none d-sm-inline">INICIO</span>
                     </a>
                 </li>
@@ -88,9 +88,33 @@
     <!-- Page Content -->
     <div style="margin-left:25%">
         <div class="w3-container w3-teal">
-            <h1>COMPLETADOS</h1>
+            <h1>USUARIOS</h1>
         </div>
         <div class="w3-container">
+            <div style="margin-top:20px">
+            <table class="w3-table-all w3-card-4">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Tipo</th>
+                </tr>
+                <tr>
+                    <td>Juan</td>
+                    <td>toto@gmail.com</td>
+                    <td>Usuario</td>
+                </tr>
+                <tr>
+                    <td>Raul</td>
+                    <td>Homo@sexual.com</td>
+                    <td>Admin</td>
+                </tr>
+                <tr>
+                    <td>Liz</td>
+                    <td>papito@hotmail.com</td>
+                    <td>Usuario</td>
+                </tr>
+            </table>
+            </div>
         </div>
     </div>
 </body>
