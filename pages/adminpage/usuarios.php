@@ -48,6 +48,7 @@
                         <i class="fs-5 fas fa-check"></i><span class="fs-4 d-none ms-3 d-sm-inline">Completados</span>  
                     </a>
                 </li>
+                
             </ul>
             <hr class="d-sm-none">
             <div class="mt-auto">
@@ -59,6 +60,13 @@
     </div>
 
     <!-- Page Content -->
+
+    <?php
+    require_once('../../config/users.php');
+    $query = "SELECT * FROM users";
+    $result = $conexion->query($query);
+    ?>
+
     <div style="margin-left:25%">
         <div class="w3-container w3-teal">
             <h1>USUARIOS</h1>
@@ -66,26 +74,35 @@
         <div class="w3-container">
             <div style="margin-top:20px">
             <table class="w3-table-all w3-card-4">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Tipo</th>
-                </tr>
-                <tr>
-                    <td>Juan</td>
-                    <td>toto@gmail.com</td>
-                    <td>Usuario</td>
-                </tr>
-                <tr>
-                    <td>Raul</td>
-                    <td>Homo@sexual.com</td>
-                    <td>Admin</td>
-                </tr>
-                <tr>
-                    <td>Liz</td>
-                    <td>papito@hotmail.com</td>
-                    <td>Usuario</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Rol</th>
+                        <th>Contraseña</th>
+                        <th>Correo</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <?php
+                        while($row = $result->fetch_assoc()){
+                        ?>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['name']; ?></td>
+                            <td><?php echo $row['rol']; ?></td>
+                            <td><?php echo $row['password']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['status']; ?></td>
+                            <td>
+                                <a href="archivodeupdate.php?ID=<?php echo $row['id']; ?>" class="btn btn-warning">Editar</a>
+                                <a href="../../config/archivodelete.php.php?ID=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
             </table>
             </div>
         </div>
