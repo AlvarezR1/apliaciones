@@ -62,7 +62,7 @@
     <!-- Page Content -->
 
     <?php
-    require_once('../../config/users.php');
+    require_once('../../config/conne.php');
     $query = "SELECT * FROM users";
     $result = $conexion->query($query);
     ?>

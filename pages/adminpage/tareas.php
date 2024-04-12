@@ -59,10 +59,54 @@
     </div>
 
     <!-- Page Content -->
+    <?php
+    require_once('../../config/conne.php');
+    $query = "SELECT * FROM tareas";
+    $result = $conexion->query($query);
+    ?>
     <div style="margin-left:25%">
         <div class="w3-container w3-teal">
-            <h1>TAREAS</h1>
+            <h1>USUARIOS</h1>
         </div>
-
+        <div class="w3-container">
+            <div style="margin-top:20px">
+            <table class="w3-table-all w3-card-4">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Usuario asignado</th>
+                        <th>Nombre tarea</th>
+                        <th>Descripción</th>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                        <th>Prioridad</th>
+                        <th>Categoria</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <?php
+                        while($row = $result->fetch_assoc()){
+                        ?>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['user_assigned']; ?></td>
+                            <td><?php echo $row['name_task']; ?></td>
+                            <td><?php echo $row['description']; ?></td>
+                            <td><?php echo $row['fecha']; ?></td>
+                            <td><?php echo $row['estado']; ?></td>
+                            <td><?php echo $row['prioridad']; ?></td>
+                            <td><?php echo $row['categoria']; ?></td>
+                            <td>
+                                <a href="archivodeupdate.php?ID=<?php echo $row['id']; ?>" class="btn btn-warning">Editar</a>
+                                <a href="../../config/archivodelete.php.php?ID=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
