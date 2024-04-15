@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-04-2024 a las 22:09:46
+-- Tiempo de generación: 15-04-2024 a las 03:53:25
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -108,11 +108,10 @@ INSERT INTO `status` (`id`, `status`) VALUES
 
 CREATE TABLE `tareas` (
   `id` int(11) NOT NULL,
-  `user_assigned` varchar(50) NOT NULL,
   `name_task` varchar(50) NOT NULL,
   `description` varchar(255) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
-  `estado` int(11) NOT NULL,
+  `numero` int(11) NOT NULL,
   `prioridad` int(11) NOT NULL,
   `categoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -121,12 +120,14 @@ CREATE TABLE `tareas` (
 -- Volcado de datos para la tabla `tareas`
 --
 
-INSERT INTO `tareas` (`id`, `user_assigned`, `name_task`, `description`, `fecha`, `estado`, `prioridad`, `categoria`) VALUES
-(1, 'usuario', 'Tramite', 'Ir al banco para el desbloqueo de la tarjeta', '2024-03-21 19:16:48', 1, 3, 1),
-(2, 'usuario', 'papeleo', 'Ir a la papeleria y sacar copias de comprobante de domicilio', '2024-04-10 16:59:00', 1, 2, 2),
-(3, 'usuario', 'tareas del hogar', 'Barrer y trapear toda la casa, porque espero visitas', '2024-04-12 08:30:00', 1, 1, 1),
-(4, 'usuario', 'Banco', 'Ir a pedir informes sobre un prestamos para mi mortalika', '2024-04-08 20:06:33', 1, 1, 3),
-(5, 'usuario', 'Super', 'Ir al supermercado para comprar papel de baño', '2024-04-10 23:00:00', 1, 3, 3);
+INSERT INTO `tareas` (`id`, `name_task`, `description`, `fecha`, `numero`, `prioridad`, `categoria`) VALUES
+(1, 'Tramite', 'Ir al banco para el desbloqueo de la tarjeta', '2024-03-21 19:16:48', 1, 3, 1),
+(2, 'papeleo', 'Ir a la papeleria y sacar copias de comprobante de domicilio', '2024-04-10 16:59:00', 1, 2, 2),
+(3, 'tareas del hogar', 'Barrer y trapear toda la casa, porque espero visitas', '2024-04-12 08:30:00', 1, 1, 1),
+(4, 'Banco', 'Ir a pedir informes sobre un prestamos para mi mortalika', '2024-04-08 20:06:33', 1, 1, 3),
+(5, 'Super', 'Ir al supermercado para comprar papel de baño', '2024-04-10 23:00:00', 1, 3, 3),
+(8, '4040', 'ffsf', '2024-04-02 05:00:00', 1, 1, 1),
+(9, '1212', 'rerw', '2024-04-25 05:00:00', 2, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -186,13 +187,17 @@ ALTER TABLE `status`
 -- Indices de la tabla `tareas`
 --
 ALTER TABLE `tareas`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `prioridad` (`prioridad`,`categoria`),
+  ADD KEY `categoria` (`categoria`);
 
 --
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `rol` (`rol`,`status`),
+  ADD KEY `status` (`status`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -226,13 +231,31 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT de la tabla `tareas`
 --
 ALTER TABLE `tareas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `tareas`
+--
+ALTER TABLE `tareas`
+  ADD CONSTRAINT `tareas_ibfk_1` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tareas_ibfk_2` FOREIGN KEY (`prioridad`) REFERENCES `prioridad` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`status`) REFERENCES `status` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`rol`) REFERENCES `rol` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
