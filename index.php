@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['id'] = $resultado['id'];
         $rol = $resultado['rol'];
         if ($rol == 1) {
-            header("Location: pages/adminpage/adminpage.php");
+            header("Location: pages/adminpage/usuarios.php");
             exit();
         } elseif ($rol == 2) {
             header("Location: pages/userpage/userpage.php");

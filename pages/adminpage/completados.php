@@ -21,11 +21,6 @@
         </a>
         <ul class="nav nav-pills flex-column mt-4 mb-auto">
             <li class="nav-item">
-                <a href="adminpage.php" class="nav-link">
-                    <i class="fs-5 fas fa-home"></i><span class="fs-4 ms-3 d-none d-sm-inline">INICIO</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a href="usuarios.php" class="nav-link">
                     <i class="fs-5 fas fa-user"></i><span class="fs-4 ms-3 d-none d-sm-inline">Usuarios</span>
                 </a>

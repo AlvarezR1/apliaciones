@@ -12,59 +12,54 @@
 </head>
 <body>
     <!-- Page Content -->
-    <div class="w3-sidebar w3-light-grey">
-        <div class="bg-dark p-2 d-flex flex-column h-100">
-            <a class="d-flex text-decoration-none mt-1 align-items-center text-white">
-                <span class="fs-4 d-none d-sm-inline">CRUD OPERATIONS</span>
-            </a>
-            <ul class="nav nav-pills flex-column mt-4 mb-auto">
-                <li class="nav-item">
-                    <a href="adminpage.php" class="nav-link">
-                        <i class="fs-5 fas fa-home"></i><span class="fs-4 ms-3 d-none d-sm-inline">INICIO</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="usuarios.php" class="nav-link">
-                        <i class="fs-5 fas fa-user"></i><span class="fs-4 ms-3 d-none d-sm-inline">Usuarios</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="tareas.php" class="nav-link">
-                        <i class="fs-5 fas fa-th-large"></i><span class="fs-4 ms-3 d-none d-sm-inline">Tareas</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="pendientes.php" class="nav-link">
-                        <i class="fs-5 fas fa-clipboard"></i><span class="fs-4 ms-3 d-none d-sm-inline">Pendientes</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="atrasados.php" class="nav-link">
-                        <i class="fs-5 fas fa-tachometer-alt"></i><span class="fs-4 ms-3 d-none d-sm-inline">Atrasados</span>  
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="completados.php" class="nav-link">
-                        <i class="fs-5 fas fa-check"></i><span class="fs-4 d-none ms-3 d-sm-inline">Completados</span>  
-                    </a>
-                </li>
-                
-            </ul>
-            <hr class="d-sm-none">
-            <div class="mt-auto">
-                <a href="config/logout.php" class="nav-link">
-                    <i class="fs-5 fas fa-sign-out-alt"></i><span class="fs-4 d-none ms-3 d-sm-inline">Salir</span>  
+   
+<!-- Page Content -->
+<div class="w3-sidebar w3-light-grey" style="width: 300px;"> <!-- Cambia el valor de width según lo que necesites -->
+    <div class="bg-dark p-2 d-flex flex-column h-100">
+        <a class="d-flex text-decoration-none mt-1 align-items-center text-white">
+            <span class="fs-4 d-none d-sm-inline">CRUD OPERATIONS</span>
+        </a>
+        <ul class="nav nav-pills flex-column mt-4 mb-auto">
+            <li class="nav-item">
+                <a href="usuarios.php" class="nav-link">
+                    <i class="fs-5 fas fa-user"></i><span class="fs-4 ms-3 d-none d-sm-inline">Usuarios</span>
                 </a>
-            </div>
+            </li>
+            <li class="nav-item">
+                <a href="tareas.php" class="nav-link">
+                    <i class="fs-5 fas fa-th-large"></i><span class="fs-4 ms-3 d-none d-sm-inline">Tareas</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="pendientes.php" class="nav-link">
+                    <i class="fs-5 fas fa-clipboard"></i><span class="fs-4 ms-3 d-none d-sm-inline">Pendientes</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="atrasados.php" class="nav-link">
+                    <i class="fs-5 fas fa-tachometer-alt"></i><span class="fs-4 ms-3 d-none d-sm-inline">Atrasados</span>  
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="completados.php" class="nav-link">
+                    <i class="fs-5 fas fa-check"></i><span class="fs-4 d-none ms-3 d-sm-inline">Completados</span>  
+                </a>
+            </li>
+        </ul>
+        <hr class="d-sm-none">
+        <div class="mt-auto">
+            <a href="config/logout.php" class="nav-link">
+                <i class="fs-5 fas fa-sign-out-alt"></i><span class="fs-4 d-none ms-3 d-sm-inline">Salir</span>  
+            </a>
         </div>
     </div>
-
+</div>
     <!-- Page Content -->
 
     <?php
-    require_once('../../config/conne.php');
+    require_once('../../config/connect.php');
     $query = "SELECT * FROM users";
-    $result = $conexion->query($query);
+    $result = $connect->query($query);
     ?>
 
     <div style="margin-left:25%">
@@ -72,7 +67,7 @@
             <h1>USUARIOS</h1>
         </div>
         <div class="w3-container">
-            <div style="margin-top:20px">
+            <div style="margin-top:25px">
             <table class="w3-table-all w3-card-4">
                 <thead>
                     <tr>
