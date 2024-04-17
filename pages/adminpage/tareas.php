@@ -64,6 +64,20 @@
         <div class="w3-container w3-teal">
             <h1>USUARIOS</h1>
         </div>
+        <style>
+  .btntr {
+    text-align: right; 
+  }
+</style>
+
+<div class="w3-container">
+  <div class="btntr">
+    <div style="margin-top:2em">
+      <a href="../userpage/formulario.php" class="btn btn-success btn-lg">Añadir Usuarios</a>
+    </div>
+  </div>
+</div>
+
         <div class="w3-container">
             <div style="margin-top:20px">
             <table class="w3-table-all w3-card-4">
