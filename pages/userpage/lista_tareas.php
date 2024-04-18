@@ -50,15 +50,6 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2 class="text-center">Tareas</h2>
-            <div class="list-group" id="backlog">
-                <!-- Aquí van las tareas del backlog -->
-                <?php
-                // Tu código PHP para mostrar las tareas del backlog desde la base de datos
-                ?>
-            </div>
-        </div>
-        <div class="col">
             <h2 class="text-center">Pendientes</h2>
             <div class="list-group" id="en-progreso">
                 <!-- Aquí van las tareas en progreso -->
