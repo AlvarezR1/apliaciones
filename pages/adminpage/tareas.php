@@ -62,7 +62,7 @@
     ?>
     <div style="margin-left:20%">
         <div class="w3-container w3-teal">
-            <h1>USUARIOS</h1>
+            <h1>TAREAS</h1>
         </div>
         <style>
   .btntr {
