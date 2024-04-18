@@ -72,9 +72,9 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre tarea</th>
-                        <th>Descripción</th>
-                        <th>Fecha</th>
                         <th>Estado</th>
+                        <th>Fecha</th>
+                        <th>Descripción</th>
                         <th>Prioridad</th>
                         <th>Categoria</th>
                         <th>Acciones</th>
@@ -87,9 +87,9 @@
                         <tr>
                             <td><?php echo $row['id']; ?></td>
                             <td><?php echo $row['name_task']; ?></td>
-                            <td><?php echo $row['description']; ?></td>
+                            <td><?php echo $row['status']; ?></td>
                             <td><?php echo $row['fecha']; ?></td>
-                            <td><?php echo $row['estado']; ?></td>
+                            <td><?php echo $row['description']; ?></td>
                             <td><?php echo $row['prioridad']; ?></td>
                             <td><?php echo $row['categoria']; ?></td>
                             <td>
