@@ -13,7 +13,7 @@
 <body>
     <!-- Page Content -->
    
-<!-- Page Content -->
+<!-- Page Content-->
 <div class="w3-sidebar w3-light-grey" style="width: 300px;"> <!-- Cambia el valor de width según lo que necesites -->
     <div class="bg-dark p-2 d-flex flex-column h-100">
         <a class="d-flex text-decoration-none mt-1 align-items-center text-white">
@@ -63,7 +63,7 @@
     $result = $connect->query($query);
     ?>
 
-    <div style="margin-left:20%">
+    <div style="margin-left:19%">
         <div class="w3-container w3-teal">
             <h1>USUARIOS</h1>
         </div>
