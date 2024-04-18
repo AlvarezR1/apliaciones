@@ -43,9 +43,17 @@
             color: #fff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
+
+        .btn-exit {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
     </style>
 </head>
 <body>
+
+<a href="../../config/logout.php" class="btn btn-danger btn-exit">Salir</a>
 
 <div class="container">
     <div class="row">
@@ -56,7 +64,7 @@
             </div>
         </div>
         <div class="col">
-            <h2 class="text-center">    Atrasados</h2>
+            <h2 class="text-center">Atrasados</h2>
             <div class="list-group" id="prueba">
                 <!-- Aquí van las tareas en prueba -->
             </div>
