@@ -47,7 +47,7 @@
             </li>
             <hr class="d-sm-none">
         <div class="mt-auto">
-        <a href="../../config/logout.php" class="nav-link">
+            <a href="../../config/logout.php" class="nav-link">
                 <i class="fs-5 fas fa-sign-out-alt"></i><span class="fs-4 d-none ms-3 d-sm-inline">Salir</span>  
             </a>
         </div>
@@ -61,9 +61,9 @@
     $query = "SELECT * FROM tareas";
     $result = $connect->query($query);
     ?>
-    <div style="margin-left:25%">
+    <div style="margin-left:15.5%">
         <div class="w3-container w3-teal">
-            <h1>USUARIOS</h1>
+            <h1>TAREAS</h1>
         </div>
         <div class="w3-container">
             <div style="margin-top:20px">
