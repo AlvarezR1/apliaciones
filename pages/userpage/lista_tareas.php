@@ -7,14 +7,15 @@
     <title>Lista de Tareas</title>
     <style>
         body {
-            background-image: url('https://image.freepik.com/vector-gratis/fondo-espacial-estrellas-negras-espacio-oscuro-ilustracion-vectorial-dibujos-animados-estilo-realista_79225-303.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
+            background-color: #f0f0f0;
             font-family: 'Roboto', sans-serif;
         }
 
         .container {
             padding-top: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
 
         .col {
@@ -40,39 +41,81 @@
         h2 {
             margin-bottom: 20px;
             font-weight: bold;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #333;
         }
 
         .btn-exit {
             position: absolute;
             top: 10px;
             right: 10px;
+            background-color: #dc3545;
+            border: none;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-exit:hover {
+            background-color: #c82333;
+        }
+
+        .list-group {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .list-group h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .list-group-item {
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .list-group-item:hover {
+            background-color: #e9ecef;
         }
     </style>
 </head>
 <body>
 
-<a href="../../config/logout.php" class="btn btn-danger btn-exit">Salir</a>
+<a href="../../config/logout.php" class="btn btn-exit">Salir</a>
 
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2 class="text-center">Pendientes</h2>
-            <div class="list-group" id="en-progreso">
-                <!-- Aquí van las tareas en progreso -->
+            <div class="list-group">
+                <h2 class="text-center">Pendientes</h2>
+                <div class="list-group" id="en-progreso">
+                    <!-- Aquí van las tareas en progreso -->
+                </div>
             </div>
         </div>
         <div class="col">
-            <h2 class="text-center">Atrasados</h2>
-            <div class="list-group" id="prueba">
-                <!-- Aquí van las tareas en prueba -->
+            <div class="list-group">
+                <h2 class="text-center">Atrasados</h2>
+                <div class="list-group" id="prueba">
+                    <!-- Aquí van las tareas en prueba -->
+                </div>
             </div>
         </div>
         <div class="col">
-            <h2 class="text-center">Completados</h2>
-            <div class="list-group" id="finalizado">
-                <!-- Aquí van las tareas finalizadas -->
+            <div class="list-group">
+                <h2 class="text-center">Completados</h2>
+                <div class="list-group" id="finalizado">
+                    <!-- Aquí van las tareas finalizadas -->
+                </div>
             </div>
         </div>
     </div>
