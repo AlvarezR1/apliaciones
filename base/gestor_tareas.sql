@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-04-2024 a las 06:12:19
+-- Tiempo de generación: 18-04-2024 a las 10:43:37
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -109,6 +109,7 @@ INSERT INTO `status` (`id`, `status`) VALUES
 CREATE TABLE `tareas` (
   `id` int(11) NOT NULL,
   `name_task` varchar(35) NOT NULL,
+  `status` int(11) NOT NULL,
   `description` varchar(120) NOT NULL,
   `fecha` datetime NOT NULL,
   `numero` int(11) NOT NULL,
@@ -120,8 +121,9 @@ CREATE TABLE `tareas` (
 -- Volcado de datos para la tabla `tareas`
 --
 
-INSERT INTO `tareas` (`id`, `name_task`, `description`, `fecha`, `numero`, `prioridad`, `categoria`) VALUES
-(1, 'Banco', 'Ir a renovar la tarjeta de crédito', '2024-05-01 10:30:00', 1, 2, 3);
+INSERT INTO `tareas` (`id`, `name_task`, `status`, `description`, `fecha`, `numero`, `prioridad`, `categoria`) VALUES
+(1, 'Banco', 1, 'Ir a renovar la tarjeta de crédito', '2024-05-01 10:30:00', 1, 2, 3),
+(2, '', 0, '', '0000-00-00 00:00:00', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -218,7 +220,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT de la tabla `tareas`
 --
 ALTER TABLE `tareas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
