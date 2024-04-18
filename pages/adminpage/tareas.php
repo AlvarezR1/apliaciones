@@ -89,6 +89,7 @@
                         <th>Descripción</th>
                         <th>Prioridad</th>
                         <th>Categoria</th>
+                        <th>status</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -102,6 +103,7 @@
                             <td><?php echo $row['fecha']; ?></td>
                             <td><?php echo $row['description']; ?></td>
                             <td><?php echo $row['prioridad']; ?></td>
+                            <td><?php echo $row['status']; ?></td>
                             <td><?php echo $row['categoria']; ?></td>
                             <td>
                                 <a href="../../config/archivodelete.php.php?ID=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>
