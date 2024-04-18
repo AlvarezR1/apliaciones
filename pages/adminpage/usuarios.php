@@ -59,7 +59,7 @@
 
     <?php
     require_once('../../config/connect.php');
-    $query = "SELECT * FROM users";
+    $query = "SELECT u.id, u.name, r.rol as user_rol, u.password, u.email, s.status as estatus FROM users u LEFT JOIN rol r on u.id = r.id LEFT JOIN status s ON u.id = s.id;";
     $result = $connect->query($query);
     ?>
 
@@ -102,10 +102,10 @@
                         <tr>
                             <td><?php echo $row['id']; ?></td>
                             <td><?php echo $row['name']; ?></td>
-                            <td><?php echo $row['rol']; ?></td>
+                            <td><?php echo $row['user_rol']; ?></td>
                             <td><?php echo $row['password']; ?></td>
                             <td><?php echo $row['email']; ?></td>
-                            <td><?php echo $row['status']; ?></td>
+                            <td><?php echo $row['estatus']; ?></td>
                             <td>
                                 <a href="../../config/archivodelete.php.php?ID=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>
                             </td>

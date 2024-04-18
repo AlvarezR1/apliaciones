@@ -97,6 +97,14 @@
         <div class="col">
             <div class="list-group">
                 <h2 class="text-center">Pendientes</h2>
+                <div class="list-group" id="backlog">
+                    <!-- Aquí van las tareas pendientes -->
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="list-group">
+                <h2 class="text-center">En progreso</h2>
                 <div class="list-group" id="en-progreso">
                     <!-- Aquí van las tareas en progreso -->
                 </div>
@@ -104,15 +112,7 @@
         </div>
         <div class="col">
             <div class="list-group">
-                <h2 class="text-center">Atrasados</h2>
-                <div class="list-group" id="prueba">
-                    <!-- Aquí van las tareas en prueba -->
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="list-group">
-                <h2 class="text-center">Completados</h2>
+                <h2 class="text-center">Completadas</h2>
                 <div class="list-group" id="finalizado">
                     <!-- Aquí van las tareas finalizadas -->
                 </div>
@@ -124,29 +124,59 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
-        $('.list-group-item').on('click', function(){
+        // Función para cargar los datos desde la base de datos y mostrarlos en las listas
+        function cargarDatos() {
+            $.ajax({
+                url: '../../config/obtener_tareas.php', // Script PHP para obtener las tareas desde la base de datos
+                method: 'GET',
+                success: function(response) {
+                    // Procesa los datos obtenidos y muestra las tareas en las listas correspondientes
+                    response.forEach(function(tareas) {
+                        $('#' + tareas.id).append('<div class="list-group-item" id="' + tareas.name_task + '">' + tareas.description + '</div>');
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error(error); // Maneja errores
+                }
+            });
+        }
+
+        // Llama a la función para cargar los datos al cargar la página por primera vez
+        cargarDatos();
+
+        // Manejador de evento para mover las tareas entre listas
+        $('.list-group').on('click', '.list-group-item', function(){
             var taskId = $(this).attr('id');
             var currentListId = $(this).closest('.list-group').attr('id');
             var newListId;
+            // Lógica para determinar la lista de destino
             switch (currentListId) {
                 case 'backlog':
                     newListId = 'en-progreso';
                     break;
                 case 'en-progreso':
-                    newListId = 'prueba';
-                    break;
-                case 'prueba':
                     newListId = 'finalizado';
                     break;
                 default:
                     newListId = 'backlog';
             }
             // Aquí enviarías una solicitud AJAX para actualizar la base de datos
-            // Por ahora, simplemente movemos la tarea en la interfaz sin actualizar la base de datos
+            $.ajax({
+                url: 'actualizar_tarea.php', // Ruta al script PHP
+                method: 'POST',
+                data: { taskId: taskId, newListId: newListId },
+                success: function(response) {
+                    // Maneja la respuesta si es necesaria
+                },
+                error: function(xhr, status, error) {
+                    console.error(error); // Maneja errores
+                }
+            });
             $(this).appendTo('#' + newListId);
         });
     });
 </script>
+
 
 </body>
 </html>
