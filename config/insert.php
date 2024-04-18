@@ -11,5 +11,5 @@ $query = "INSERT INTO tareas (name_task, description, fecha, numero, prioridad ,
 VALUES ('$name_task', '$descripcion', '$fecha_finalizacion', '$numero','$prioridad', '$categoria')";
 echo $query;
 $connect->query($query);
-header("Location: ../pages/userpage/userpage.php");
+header("Location: ../pages/adminpage/tareas.php");
 ?>

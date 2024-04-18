@@ -14,15 +14,12 @@
 
     <div class="form-container">
 
-        <form action="../../config/insert.php" method="POST">
+        <form action="../../config/insert_user.php" method="POST">
             <label for="name " class="form-label">Nombre de Usuario:</label>
             <input type="text" class="form-control" id="name" name="name" required>
 
             <label for="email" class="form-label">email:</label>
             <input type="text" class="form-control" id="email" name="email" required>
-
-            <label for="password" class="form-label">password:</label>
-            <input type="text" class="form-control" id="password" name="password" required>
 
             <label for="password" class="form-label">password:</label>
             <input type="text" class="form-control" id="password" name="password" required>

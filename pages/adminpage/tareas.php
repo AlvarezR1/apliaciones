@@ -61,10 +61,23 @@
     $query = "SELECT * FROM tareas";
     $result = $connect->query($query);
     ?>
-    <div style="margin-left:15.5%">
+    <div style="margin-left:19%">
         <div class="w3-container w3-teal">
             <h1>TAREAS</h1>
         </div>
+        <style>
+  .btntr {
+    text-align: right; 
+  }
+</style>
+
+<div class="w3-container">
+  <div class="btntr">
+    <div style="margin-top:2em">
+      <a href="../userpage/formulario.php" class="btn btn-success btn-lg">Añadir Tarea</a>
+    </div>
+  </div>
+</div>
         <div class="w3-container">
             <div style="margin-top:20px">
             <table class="w3-table-all w3-card-4">
@@ -93,7 +106,6 @@
                             <td><?php echo $row['prioridad']; ?></td>
                             <td><?php echo $row['categoria']; ?></td>
                             <td>
-                                <a href="archivodeupdate.php?ID=<?php echo $row['id']; ?>" class="btn btn-warning">Editar</a>
                                 <a href="../../config/archivodelete.php.php?ID=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
