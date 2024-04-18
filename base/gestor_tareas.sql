@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-04-2024 a las 01:27:43
--- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Tiempo de generación: 18-04-2024 a las 06:12:19
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,15 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categoria` (
   `id` int(11) NOT NULL,
-  `categoria` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `categoria` varchar(22) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `categoria`
 --
 
 INSERT INTO `categoria` (`id`, `categoria`) VALUES
-(1, 'limpieza');
+(1, 'Tareas del hogar'),
+(2, 'Papeleria'),
+(3, 'Tareas en general'),
+(4, 'Tareas escolares');
 
 -- --------------------------------------------------------
 
@@ -47,8 +50,8 @@ INSERT INTO `categoria` (`id`, `categoria`) VALUES
 
 CREATE TABLE `prioridad` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `nombre` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `prioridad`
@@ -67,15 +70,15 @@ INSERT INTO `prioridad` (`id`, `nombre`) VALUES
 
 CREATE TABLE `rol` (
   `id` int(11) NOT NULL,
-  `rol` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `rol` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `rol`
 --
 
 INSERT INTO `rol` (`id`, `rol`) VALUES
-(1, 'Admin'),
+(1, 'Administrador'),
 (2, 'Usuario');
 
 -- --------------------------------------------------------
@@ -86,16 +89,16 @@ INSERT INTO `rol` (`id`, `rol`) VALUES
 
 CREATE TABLE `status` (
   `id` int(11) NOT NULL,
-  `status` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `status` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `status`
 --
 
 INSERT INTO `status` (`id`, `status`) VALUES
-(1, 'activo'),
-(2, 'desactivado');
+(1, 'Activo'),
+(2, 'Desactivado');
 
 -- --------------------------------------------------------
 
@@ -105,21 +108,20 @@ INSERT INTO `status` (`id`, `status`) VALUES
 
 CREATE TABLE `tareas` (
   `id` int(11) NOT NULL,
-  `user_assigned` varchar(50) NOT NULL,
-  `name_task` varchar(50) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
-  `estado` int(11) NOT NULL,
+  `name_task` varchar(35) NOT NULL,
+  `description` varchar(120) NOT NULL,
+  `fecha` datetime NOT NULL,
+  `numero` int(11) NOT NULL,
   `prioridad` int(11) NOT NULL,
   `categoria` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `tareas`
 --
 
-INSERT INTO `tareas` (`id`, `user_assigned`, `name_task`, `description`, `fecha`, `estado`, `prioridad`, `categoria`) VALUES
-(1, 'usuario', 'primera tarea ', 'Esta es la descripciond de prueba', '2024-03-21 19:16:48', 1, 1, 1);
+INSERT INTO `tareas` (`id`, `name_task`, `description`, `fecha`, `numero`, `prioridad`, `categoria`) VALUES
+(1, 'Banco', 'Ir a renovar la tarjeta de crédito', '2024-05-01 10:30:00', 1, 2, 3);
 
 -- --------------------------------------------------------
 
@@ -129,19 +131,20 @@ INSERT INTO `tareas` (`id`, `user_assigned`, `name_task`, `description`, `fecha`
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `name` varchar(25) NOT NULL,
-  `rol` int(11) NOT NULL,
+  `name` varchar(35) NOT NULL,
+  `rol` int(22) NOT NULL,
   `password` varchar(35) NOT NULL,
-  `email` varchar(150) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `email` varchar(60) NOT NULL,
+  `status` int(22) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `rol`, `password`, `email`, `status`) VALUES
-(1, 'Lizandro', 1, '1234', 'lizandro@unid.mx', 1);
+(1, 'Raul', 2, '12345', 'Raulcachondo@gmail.com', 1),
+(2, 'Lizandro', 1, '78945', 'lizjarioso@gmail.com', 1);
 
 --
 -- Índices para tablas volcadas
@@ -191,7 +194,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `prioridad`
@@ -203,13 +206,13 @@ ALTER TABLE `prioridad`
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tareas`
@@ -221,7 +224,7 @@ ALTER TABLE `tareas`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
