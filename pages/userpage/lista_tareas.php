@@ -7,7 +7,10 @@
     <title>Lista de Tareas</title>
     <style>
         body {
-            background-color: #f8f9fa;
+            background-image: url('https://image.freepik.com/vector-gratis/fondo-espacial-estrellas-negras-espacio-oscuro-ilustracion-vectorial-dibujos-animados-estilo-realista_79225-303.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Roboto', sans-serif;
         }
 
         .container {
@@ -20,19 +23,25 @@
 
         .list-group-item {
             cursor: pointer;
+            border-radius: 0;
+            border: none;
+            border-bottom: 1px solid #dee2e6;
+            background-color: #fff;
+        }
+
+        .list-group-item:last-child {
+            border-bottom: none;
         }
 
         .list-group-item:hover {
-            background-color: #e9ecef;
-        }
-
-        .list-group-item:not(:last-child) {
-            margin-bottom: 5px;
+            background-color: #f1f1f1;
         }
 
         h2 {
             margin-bottom: 20px;
             font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -41,7 +50,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2>Backlog</h2>
+            <h2 class="text-center">Backlog</h2>
             <div class="list-group" id="backlog">
                 <!-- Aquí van las tareas del backlog -->
                 <?php
@@ -50,19 +59,19 @@
             </div>
         </div>
         <div class="col">
-            <h2>En Progreso</h2>
+            <h2 class="text-center">En Progreso</h2>
             <div class="list-group" id="en-progreso">
                 <!-- Aquí van las tareas en progreso -->
             </div>
         </div>
         <div class="col">
-            <h2>Prueba</h2>
+            <h2 class="text-center">Prueba</h2>
             <div class="list-group" id="prueba">
                 <!-- Aquí van las tareas en prueba -->
             </div>
         </div>
         <div class="col">
-            <h2>Finalizado</h2>
+            <h2 class="text-center">Finalizado</h2>
             <div class="list-group" id="finalizado">
                 <!-- Aquí van las tareas finalizadas -->
             </div>
@@ -91,15 +100,6 @@
                     newListId = 'backlog';
             }
             // Aquí enviarías una solicitud AJAX para actualizar la base de datos
-            // Puedes usar jQuery $.post() o $.ajax() para enviar la solicitud
-            // Por ejemplo:
-            // $.post('actualizar_tarea.php', {taskId: taskId, newListId: newListId}, function(data){
-            //    // Actualizar la interfaz si es necesario
-            // });
-            // Reemplaza 'actualizar_tarea.php' con la URL de tu script PHP que maneja la actualización de la tarea
-            // Y asegúrate de pasar los datos necesarios a tu script PHP, como taskId y newListId
-            // Por razones de seguridad y buenas prácticas, asegúrate de validar y sanitizar los datos antes de usarlos en consultas SQL
-            // Además, recuerda manejar las respuestas y errores del servidor en la función de devolución de llamada (callback) de AJAX
             // Por ahora, simplemente movemos la tarea en la interfaz sin actualizar la base de datos
             $(this).appendTo('#' + newListId);
         });
@@ -108,5 +108,3 @@
 
 </body>
 </html>
-
-
