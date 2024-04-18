@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: pages/adminpage/usuarios.php");
             exit();
         } elseif ($rol == 2) {
-            header("Location: pages/userpage/userpage.php");
+            header("Location: pages/userpage/lista_tareas.php");
             exit();
         }
     } elseif ($resultado == 'contraseña') {
