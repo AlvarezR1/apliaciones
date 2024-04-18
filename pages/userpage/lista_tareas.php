@@ -50,7 +50,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2 class="text-center">Backlog</h2>
+            <h2 class="text-center">Tareas</h2>
             <div class="list-group" id="backlog">
                 <!-- Aquí van las tareas del backlog -->
                 <?php
@@ -59,19 +59,19 @@
             </div>
         </div>
         <div class="col">
-            <h2 class="text-center">En Progreso</h2>
+            <h2 class="text-center">Pendientes</h2>
             <div class="list-group" id="en-progreso">
                 <!-- Aquí van las tareas en progreso -->
             </div>
         </div>
         <div class="col">
-            <h2 class="text-center">Prueba</h2>
+            <h2 class="text-center">    Atrasados</h2>
             <div class="list-group" id="prueba">
                 <!-- Aquí van las tareas en prueba -->
             </div>
         </div>
         <div class="col">
-            <h2 class="text-center">Finalizado</h2>
+            <h2 class="text-center">Completados</h2>
             <div class="list-group" id="finalizado">
                 <!-- Aquí van las tareas finalizadas -->
             </div>
