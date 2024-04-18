@@ -45,13 +45,14 @@
                     <i class="fs-5 fas fa-check"></i><span class="fs-4 d-none ms-3 d-sm-inline">Completados</span>  
                 </a>
             </li>
-        </ul>
-        <hr class="d-sm-none">
+            <hr class="d-sm-none">
         <div class="mt-auto">
             <a href="config/logout.php" class="nav-link">
                 <i class="fs-5 fas fa-sign-out-alt"></i><span class="fs-4 d-none ms-3 d-sm-inline">Salir</span>  
             </a>
         </div>
+        </ul>
+      
     </div>
 </div>
     <!-- Page Content -->
