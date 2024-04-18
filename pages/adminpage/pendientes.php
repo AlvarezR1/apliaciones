@@ -9,7 +9,6 @@
     <title>Vista_Admin</title>
 </head>
 <body class="bg-light text-dark">
-    <!-- Sidebar -->
     <div class="d-flex">
         <div class="bg-dark min-vh-100 p-3" style="width: 300px;">
             <div class="text-light mb-4">
@@ -50,15 +49,12 @@
             </ul>
          
         </div>
-    <!-- /Sidebar -->
 
-    <!-- Page Content -->
     <div class="d-flex flex-column flex-grow-1">
         <div class="bg-secondary p-3">
             <h1 class="text-light">PENDIENTES</h1>
         </div>
         <div class="bg-light flex-grow-1">
-            <!-- Aquí va el contenido principal -->
             <table class="table">
   <thead>
     <tr>
@@ -92,7 +88,6 @@
     </tr>
   </tbody>
 </table>
-    <!-- /Page Content -->
     </div>
 </body>
 </html>

@@ -50,15 +50,11 @@
             </ul>
          
         </div>
-    <!-- /Sidebar -->
-
-    <!-- Page Content -->
     <div class="d-flex flex-column flex-grow-1">
         <div class="bg-secondary p-3">
             <h1 class="text-light">ATRASADOS</h1>
         </div>
         <div class="bg-light flex-grow-1">
-            <!-- Aquí va el contenido principal -->
             <table class="table">
   <thead>
     <tr>
@@ -92,7 +88,6 @@
     </tr>
   </tbody>
 </table>
-    <!-- /Page Content -->
     </div>
 </body>
 </html>

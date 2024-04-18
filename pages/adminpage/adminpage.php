@@ -14,7 +14,7 @@
     
 
 <!-- Page Content -->
-<div class="w3-sidebar w3-light-grey" style="width: 300px;"> <!-- Cambia el valor de width según lo que necesites -->
+<div class="w3-sidebar w3-light-grey" style="width: 300px;"> 
     <div class="bg-dark p-2 d-flex flex-column h-100">
         <a class="d-flex text-decoration-none mt-1 align-items-center text-white">
             <span class="fs-4 d-none d-sm-inline">CRUD OPERATIONS</span>
@@ -61,7 +61,6 @@
 </div>
 
 </body>
-    <!-- Page Content -->
     <div style="margin-left:20%">
         <div class="w3-container w3-teal">
             <h1>INICIO</h1>
