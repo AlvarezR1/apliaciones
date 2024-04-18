@@ -53,11 +53,41 @@
     <!-- /Sidebar -->
 
     <!-- Page Content -->
-    <div class="bg-light" style="flex: 1;">
+    <div class="d-flex flex-column flex-grow-1">
         <div class="bg-secondary p-3">
             <h1 class="text-light">COMPLETADOS</h1>
         </div>
-    </div>
+        <div class="bg-light flex-grow-1">
+            <!-- Aquí va el contenido principal -->
+            <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
     <!-- /Page Content -->
     </div>
 </body>

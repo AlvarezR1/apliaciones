@@ -63,9 +63,9 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Fecha</th>
-      <th scope="col">Descripción</th>
-      <th scope="col">Acciones</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
     </tr>
   </thead>
   <tbody>
