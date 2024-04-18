@@ -101,8 +101,8 @@
                             <td><?php echo $row['fecha']; ?></td>
                             <td><?php echo $row['description']; ?></td>
                             <td><?php echo $row['prioridad']; ?></td>
-                            <td><?php echo $row['status']; ?></td>
                             <td><?php echo $row['categoria']; ?></td>
+                            <td><?php echo $row['status']; ?></td>
                             <td>
                                 <a href="../../config/archivodelete.php.php?ID=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>
                                 <a href="tareas.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>
