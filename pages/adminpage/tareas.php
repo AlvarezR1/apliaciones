@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="../../css/styles.css">
     <title>Vista_Admin</title>
 </head>
-<body>
-    <!-- Page Content -->
- 
+<body> 
 <!-- Page Content -->
 <div class="w3-sidebar w3-light-grey" style="width: 300px;"> <!-- Cambia el valor de width según lo que necesites -->
     <div class="bg-dark p-2 d-flex flex-column h-100">
@@ -93,6 +91,7 @@
                             <td>
                                 <a href="archivodeupdate.php?ID=<?php echo $row['id']; ?>" class="btn btn-warning">Editar</a>
                                 <a href="../../config/archivodelete.php.php?ID=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>
+                                <a href="tareas.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
                         <?php } ?>
