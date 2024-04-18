@@ -26,7 +26,7 @@
 
             <div class="bg-dark col-auto col-md-2 min-vh-100">
                 <div class="bg-dark">
-                    <a class="d-flex text-decoration-none align items - center "">
+                    <a class="d-flex text-decoration-none align items - center ">
                       <span class="fs-4 d-none d-sm-inline ">sidemenu</span>
 
 

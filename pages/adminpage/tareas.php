@@ -70,7 +70,6 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Usuario asignado</th>
                         <th>Nombre tarea</th>
                         <th>Descripción</th>
                         <th>Fecha</th>
@@ -86,7 +85,6 @@
                         ?>
                         <tr>
                             <td><?php echo $row['id']; ?></td>
-                            <td><?php echo $row['user_assigned']; ?></td>
                             <td><?php echo $row['name_task']; ?></td>
                             <td><?php echo $row['description']; ?></td>
                             <td><?php echo $row['fecha']; ?></td>
