@@ -11,8 +11,16 @@
     <title>Vista_Admin</title>
 </head>
 <body> 
-<!-- Page Content -->
-<div class="w3-sidebar w3-light-grey" style="width: 300px;"> <!-- Cambia el valor de width según lo que necesites -->
+<script class="">
+function eliminar(id){
+    var respuesta = confirm("¿Estás seguro que quieres eliminar esta tarea?");
+    if(respuesta){
+        window.location.href = "deletetareas.php?id=" + id;
+    }
+    return false;
+}
+</script>
+<div class="w3-sidebar w3-light-grey" style="width: 300px;"> 
     <div class="bg-dark p-2 d-flex flex-column h-100">
         <a class="d-flex text-decoration-none mt-1 align-items-center text-white">
             <span class="fs-4 d-none d-sm-inline">CRUD OPERATIONS</span>
@@ -53,7 +61,6 @@
       
     </div>
 </div>
-    <!-- Page Content -->
     <?php
     require_once('../../config/connect.php');
     $query = "SELECT * FROM tareas";
@@ -104,9 +111,7 @@
                             <td><?php echo $row['categoria']; ?></td>
                             <td><?php echo $row['status']; ?></td>
                             <td>
-                                <a href="../../config/archivodelete.php.php?ID=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>
-                                <a href="tareas.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>
-                            </td>
+                            <a onclick="return confirm('¿Estás seguro que deseas eliminar esta tarea?')" href="deletetareas.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>                            </td>
                         </tr>
                         <?php } ?>
                     </tbody>

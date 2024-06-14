@@ -17,7 +17,6 @@
     <title>Vista_Admin</title>
 </head>
 <body>
-    <!-- Sidebar -->
 
     <body>
     <h1>useer</h1>
@@ -46,7 +45,6 @@
 </body>
 
 </html>
-<!-- Page Content -->
 <div style="margin-left:25%">
 
 <div class="w3-container w3-teal">

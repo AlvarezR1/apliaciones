@@ -33,47 +33,10 @@
 
 <h2>Lista de Tareas</h2>
 
-<div class="container">
-    <div class="task-list" id="pendientes">
-        <h3>Pendientes</h3>
-        <?php
-        require_once('../../config/connect.php');
-        $query = "SELECT * FROM tareas";
-        $result = $connect->query($query);
-        while($row = $result->fetch_assoc()) {
-            echo '<div class="task-item" onclick="moveToAtrasados(this)">' . $row['description'] . '</div>';
-        }
-        ?>
-    </div>
-
-    <div class="task-list" id="atrasados">
-        <h3>Atrasados</h3>
-    </div>
-
-    <div class="task-list" id="completados">
-        <h3>Completados</h3>
     </div>
 </div>
 
 <script>
-    function moveToAtrasados(task) {
-        var atrasadosList = document.getElementById('atrasados');
-        atrasadosList.appendChild(task);
-        task.setAttribute('onclick', 'moveToCompletados(this)');
-    }
-
-    function moveToCompletados(task) {
-        var completadosList = document.getElementById('completados');
-        completadosList.appendChild(task);
-        task.removeAttribute('onclick');
-    }
-
-    var completadosList = document.getElementById('completados');
-    completadosList.addEventListener('click', function(event) {
-        var target = event.target;
-        if (target.classList.contains('task-item')) {
-            moveToAtrasados(target);
-        }
     });
 </script>
 

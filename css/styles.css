@@ -10,7 +10,6 @@
 .login-card {
 	width: 790px;
 	height: 460px;
-	/* border-radius: 10px; */
 	background: #fffdfd;
 	box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.154);
 }
@@ -101,5 +100,5 @@ button.w-100.btn-login {
 }
 
 .nav-item a i {
-    margin-right: 10px; /* Ajusta el espacio entre el ícono y el texto */
+    margin-right: 10px; 
 }

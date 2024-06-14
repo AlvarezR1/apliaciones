@@ -11,7 +11,9 @@
     <title>Vista_Admin</title>
 </head>
 <body>
+
 <div class="w3-sidebar w3-light-grey" style="width: 300px;"> <!-- Cambia el valor de width según lo que necesites -->
+
     <div class="bg-dark p-2 d-flex flex-column h-100">
         <a class="d-flex text-decoration-none mt-1 align-items-center text-white">
             <span class="fs-4 d-none d-sm-inline">CRUD OPERATIONS</span>
@@ -51,7 +53,6 @@
         </ul>
     </div>
 </div>
-    <!-- Page Content -->
 
     <?php
     require_once('../../config/connect.php');
@@ -103,7 +104,7 @@
                             <td><?php echo $row['email']; ?></td>
                             <td><?php echo $row['status']; ?></td>
                             <td>
-                                <a href="../../config/archivodelete.php.php?ID=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>
+                            <a onclick="return eliminar(<?php echo $row['id']; ?>)" href="#" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
                         <?php } ?>
