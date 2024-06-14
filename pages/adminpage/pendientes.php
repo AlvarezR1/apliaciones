@@ -58,34 +58,34 @@
             <table class="table">
   <thead>
     <tr>
-      <th scope="col">ID</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-      <th scope="col">Eliminar</th>
+    <th>ID</th>
+                        <th>Nombre tarea</th>
+                        <th>Fecha</th>
+                        <th>Descripción</th>
+                        <th>Prioridad</th>
+                        <th>Categoria</th>
+                        <th>status</th>
+                        <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td> <a href="../../config/archivodelete.php.php?ID=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td> <a href="../../config/archivodelete.php.php?ID=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-      <td> <a href="../../config/archivodelete.php.php?ID=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a></td>
-    </tr>
+  <?php
+                        while($row = $result->fetch_assoc()){
+                        ?>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['name_task']; ?></td>
+                            <td><?php echo $row['fecha']; ?></td>
+                            <td><?php echo $row['description']; ?></td>
+                            <td><?php echo $row['prioridad']; ?></td>
+                            <td><?php echo $row['categoria']; ?></td>
+                            <td><?php echo $row['status']; ?></td>
+                            <td>
+                                <a href="../../config/archivodelete.php.php?ID=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>
+                                <a href="tareas.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                        <?php } ?>
   </tbody>
 </table>
     </div>

@@ -11,18 +11,9 @@
     <title>Vista_Admin</title>
 </head>
 <body>
- 
-<script class="">
-function eliminar(id){
-    var respuesta = confirm("¿Estás seguro que quieres eliminar este usuario?");
-    if(respuesta){
-        window.location.href = "delete.php?id=" + id;
-    }
-    return false;
-}
-</script>
 
-<div class="w3-sidebar w3-light-grey" style="width: 300px;"> 
+<div class="w3-sidebar w3-light-grey" style="width: 300px;"> <!-- Cambia el valor de width según lo que necesites -->
+
     <div class="bg-dark p-2 d-flex flex-column h-100">
         <a class="d-flex text-decoration-none mt-1 align-items-center text-white">
             <span class="fs-4 d-none d-sm-inline">CRUD OPERATIONS</span>
@@ -60,13 +51,12 @@ function eliminar(id){
             </a>
         </div>
         </ul>
-       
     </div>
 </div>
 
     <?php
     require_once('../../config/connect.php');
-    $query = "SELECT u.id, u.name, r.rol as user_rol, u.password, u.email, s.status as estatus FROM users u LEFT JOIN rol r on u.id = r.id LEFT JOIN status s ON u.id = s.id;";
+    $query = "SELECT * FROM users";
     $result = $connect->query($query);
     ?>
 
@@ -75,17 +65,17 @@ function eliminar(id){
             <h1>USUARIOS</h1>
         </div>
         <style>
-  .btntr {
+.btntr {
     text-align: right; 
-  }
+}
 </style>
 
 <div class="w3-container">
-  <div class="btntr">
-    <div style="margin-top:2em">
-      <a href="../userpage/forminsert.php" class="btn btn-success btn-lg">Añadir Usuarios</a>
+    <div class="btntr">
+        <div style="margin-top:2em">
+            <a href="../userpage/forminsert.php" class="btn btn-success btn-lg">Añadir Usuarios</a>
+        </div>
     </div>
-  </div>
 </div>
 
         <div class="w3-container">
@@ -109,10 +99,10 @@ function eliminar(id){
                         <tr>
                             <td><?php echo $row['id']; ?></td>
                             <td><?php echo $row['name']; ?></td>
-                            <td><?php echo $row['user_rol']; ?></td>
+                            <td><?php echo $row['rol']; ?></td>
                             <td><?php echo $row['password']; ?></td>
                             <td><?php echo $row['email']; ?></td>
-                            <td><?php echo $row['estatus']; ?></td>
+                            <td><?php echo $row['status']; ?></td>
                             <td>
                             <a onclick="return eliminar(<?php echo $row['id']; ?>)" href="#" class="btn btn-danger">Eliminar</a>
                             </td>
